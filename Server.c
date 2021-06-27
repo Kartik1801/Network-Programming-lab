@@ -1,10 +1,10 @@
 //Lab-6 Socket Programming Creating a Server Side   
 #include <stdio.h>
-//#include <netdb.h>
-//#include <netinet/in.h>
+#include <netdb.h>
+#include <netinet/in.h>
 #include <stdlib.h>
 #include <string.h>
-//#include <sys/socket.h>
+#include <sys/socket.h>
 #include <sys/types.h>
 #define MAX 80
 #define PORT 8080
@@ -57,9 +57,9 @@ int main()
     bzero(&servaddr, sizeof(servaddr));
   
     // assign IP, PORT
-//   servaddr.sin_family = AF_INET;
-//   servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-//   servaddr.sin_port = htons(PORT);
+        servaddr.sin_family = AF_INET;
+        servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+        servaddr.sin_port = htons(PORT);
   
     // Binding newly created socket to given IP and verification
     if ((bind(sockfd, (SA*)&servaddr, sizeof(servaddr))) != 0) {
